@@ -1,0 +1,14 @@
+apiVersion: v1
+entries:
+  flowui:
+  - apiVersion: v2
+    appVersion: 0.1.0
+    created: "2022-12-12T18:57:07.518233365Z"
+    description: A Helm chart for FlowUI backend services
+    digest: 6c499e919be0ded2361d639cb0283bee6d12bfbff7e18c33cb702f84a24a3a41
+    name: flowui
+    type: application
+    urls:
+    - https://github.com/Tauffer-Consulting/flowui_helm_chart/releases/download/flowui-0.1.0/flowui-0.1.0.tgz
+    version: 0.1.0
+generated: "2022-12-12T18:57:07.518239265Z"
