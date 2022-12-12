@@ -1,0 +1,25 @@
+# apiVersion: v2
+# name: flowui
+# description: A Helm chart for FlowUI
+# type: application
+# version: 0.1.0
+# appVersion: 0.1.0
+# home: https://github.com/Tauffer-Consulting/flowui
+# sources:
+#   - https://github.com/Tauffer-Consulting/flowui
+# dependencies:
+#   - condition: database.enabled
+#     name: postgresql
+#     repository: https://charts.bitnami.com/bitnami
+#     version: 12.1.3
+#   - condition: airflow.enabled
+#     name: airflow
+#     repository: https://airflow.apache.org/
+#     version: 1.7.0
+
+apiVersion: v2
+name: flowui
+description: A Helm chart for FlowUI backend services
+type: application
+version: 0.1.0
+appVersion: "0.1.0"
