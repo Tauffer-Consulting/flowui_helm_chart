@@ -17,30 +17,27 @@ backend:
   # entrypointCommand: ["/bin/bash"]
   # entrypointArgs: ["-c", "uvicorn main:app --host 0.0.0.0 --port 8000"]
 
-# Change this if using external Database
+# Databse service - do not use in production
 database:
   image: postgres
   name: postgres
   user: postgres
   password: postgres
-# # Databse service - do not use in production
-# database:
-#   enabled: true
-#   image: postgres
-#   db_name: postgres
-#   db_user: postgres
-#   db_password: postgres
 
-# # Airflow services override
-# airflow:
-#   enabled: true
-#   images:
-#     useDefaultImageForMigration: true
-#     airflow:
-#       repository: taufferconsulting/flowui-airflow-base
-#       tag: 0.1.0
-#       pullPolicy: IfNotPresent
-#   extraSecrets:
-#     airflow-ssh-secret:
-#       data: |
-#         gitSshKey: ~
+# Airflow services override
+airflow:
+  enabled: false
+  images:
+    useDefaultImageForMigration: true
+    airflow:
+      repository: taufferconsulting/flowui-airflow-base
+      tag: 0.1.0
+      pullPolicy: IfNotPresent
+  dags:
+    gitSync:
+      enabled: true
+      wait: 60 # interval between git sync attempts in seconds
+      repo: ssh://git@github.com/Tauffer-Consulting/flowui_dev_workflows_repo.git
+      branch: main
+      subPath: "workflows"
+      sshKeySecret: ~
