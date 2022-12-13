@@ -1,10 +1,10 @@
-# apiVersion: v2
-# name: flowui
-# description: A Helm chart for FlowUI
-# type: application
-# version: 0.1.0
-# appVersion: 0.1.0
-# home: https://github.com/Tauffer-Consulting/flowui
+apiVersion: v2
+name: flowui
+description: A Helm chart for FlowUI
+type: application
+version: 0.1.0
+appVersion: "0.1.0"
+home: https://github.com/Tauffer-Consulting/flowui
 # sources:
 #   - https://github.com/Tauffer-Consulting/flowui
 # dependencies:
@@ -16,10 +16,3 @@
 #     name: airflow
 #     repository: https://airflow.apache.org/
 #     version: 1.7.0
-
-apiVersion: v2
-name: flowui
-description: A Helm chart for FlowUI backend services
-type: application
-version: 0.1.0
-appVersion: "0.1.0"
