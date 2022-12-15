@@ -28,6 +28,8 @@ spec:
             - containerPort: 8000
           imagePullPolicy: IfNotPresent
           env:
+            - name: FLOWUI_DEPLOY_MODE
+              value: prod
             - name: DB_HOST
               value: {{ .Release.Name }}-postgres-service
             - name: DB_NAME

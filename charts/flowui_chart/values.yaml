@@ -1,11 +1,12 @@
 # Default values for installing FlowUI in a K8s cluster
 
-github_access_token: ~
+github_access_token: github_pat_
 
 # Frontend service
 frontend:
   enabled: true
-  image: taufferconsulting/flowui-frontend:latest
+  image: taufferconsulting/flowui-frontend
+  tag: latest
   # internalPort: 3000
   # entrypointCommand: ["/bin/bash"]
   # entrypointArgs: ["-c", "yarn start:local"] # Running it in local mode to communicate with local api
@@ -13,7 +14,8 @@ frontend:
 # Backend service
 backend:
   enabled: true
-  image: taufferconsulting/flowui-backend:latest
+  image: taufferconsulting/flowui-backend
+  tag: latest
   # entrypointCommand: ["/bin/bash"]
   # entrypointArgs: ["-c", "uvicorn main:app --host 0.0.0.0 --port 8000"]
 
@@ -38,7 +40,7 @@ database:
 #     useDefaultImageForMigration: true
 #     airflow:
 #       repository: taufferconsulting/flowui-airflow-base
-#       tag: 0.1.0
+#       tag: latest
 #       pullPolicy: IfNotPresent
 #   extraSecrets:
 #     airflow-ssh-secret:
